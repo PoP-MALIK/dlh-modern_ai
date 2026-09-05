@@ -7,9 +7,6 @@ def plot_churn_distribution(df):
     """Bar plot of Churn value counts with skyblue/salmon colors."""
     plt.figure(figsize=(12, 8))
 
-    counts = df['Churn'].value_counts()
-    color_map = {'No': 'skyblue', 'Yes': 'salmon'}
-    colors = [color_map[label] for label in counts.index]
-    plt.bar(counts.index, counts.values, color=colors)
+    df['Churn'].value_counts().plot(kind='bar', color=['skyblue', 'salmon'])
 
     plt.show()
